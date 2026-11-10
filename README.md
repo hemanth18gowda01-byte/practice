@@ -12,3 +12,11 @@
       <p> In solidity there is a concept Interface </p>
       <p> We can actually use other contracts in our contracts with interfaces so all we need is address of the contract which is deployed.</p>
       <p> We do clone the chainlink repository as library , then we inherit the contract then we pass the address of contract we needed in that interface contract so we can access it </p>
+
+
+  ## Advanced Solidity 
+  <p>I have learned today about two special functions in solidity may be it is after 0.7 0r 0.8 version in it </p>
+  <p> 1. receieve() </p>
+  <p> 2. fallback() </p>
+  <p> I will firstly brief out why this function has been developed and then we will move on to how these two special functions work?</p>
+  <body></body>
