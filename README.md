@@ -19,4 +19,27 @@
   <p> 1. receieve() </p>
   <p> 2. fallback() </p>
   <p> I will firstly brief out why this function has been developed and then we will move on to how these two special functions work?</p>
-  <body></body>
+  <body><p>These functions are mainly used in payable contracts</p>
+        <p>What if anyone calls a function with wrong calldata and sends ETH or what if anyone just send ETH without calling function </p>
+        <p> for the first problem we have fallback() and for second problem we have receieve()</p>
+        <body>                     [ Incoming Transaction ]
+                                |
+                                v
+                   Is Calldata Empty? (data == "")
+                   /                             \
+                YES                                NO
+                /                                   \
+               v                                     v
+       Does receive() exist?              Does any function match calldata?
+       /                 \                /                               \
+     YES                  NO            YES                                NO
+     /                     \            /                                   \
+    v                       v          v                                     v
+Execute                  Is fallback()   Execute Matched      Does fallback() exist?
+receive()                payable exist?     Function          /                   \
+                            /       \                       YES                    NO
+                          YES        NO                     /                       \
+                          /           \                    v                         v
+                         v             v               Execute                   Revert / Fail
+                     Execute          Revert / Fail    fallback()
+                     fallback()</body></body>
